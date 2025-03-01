@@ -342,8 +342,27 @@ public:
   bool enc_tsc_ = false;
 };
 
+template <typename _ResFty>
+static void nslookup(_ResFty&& func, const char* host, const char* catagory)
+{
+  std::vector<yasio::endpoint> eps;
+  func(eps, host, 0, SOCK_STREAM);
+
+  YASIO_LOG("========== nslookup %s ============", catagory);
+  for (auto&& ep : eps)
+  {
+    YASIO_LOG("address: %s", ep.to_string().c_str());
+  }
+}
+
 int main(int argc, char** argv)
 {
+  nslookup(yasio::xxsocket::resolve_v4, "www.baidu.com", "v4");
+  nslookup(yasio::xxsocket::resolve_v6, "www.baidu.com", "v6");
+  nslookup(yasio::xxsocket::resolve_v4to6, "www.baidu.com", "v4to6");
+  nslookup(yasio::xxsocket::resolve_tov6, "www.baidu.com", "tov6");
+  nslookup(yasio::xxsocket::resolve, "www.baidu.com", "all");
+
   const char* host = argc > 1 ? argv[1] : ICMPTEST_DEFAULT_HOST;
   int max_times    = 4;
   int payload_size = 0; // icmp payload size

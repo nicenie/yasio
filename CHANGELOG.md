@@ -1,7 +1,11 @@
+yasio-4.3.2
+
+  1. Fix API `xxsocket::resolve` compatibility issue on android and freebsd.
+  
+
 yasio-4.3.1
 
   1. Refining the resource cleanup process for io_service during the handle_stop phase, particularly when a worker thread is terminated externally
-
   
 yasio-4.3.0
 
