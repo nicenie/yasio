@@ -1,4 +1,4 @@
-<p align="center"><a href="https://global.simdsoft.com/yasio" target="_blank" rel="noopener noreferrer"><img width="160" src="docs/assets/images/logo.png" alt="yasio logo"></a></p>
+<p align="center"><a href="https://learn.simdsoft.com/yasio" target="_blank" rel="noopener noreferrer"><img width="160" src="docs/assets/images/logo.png" alt="yasio logo"></a></p>
 
 # *YASIO* - *Y*et *A*nother *S*ocket *I*/*O* library.
 
@@ -47,7 +47,7 @@
 
 ## Docomentation
 
-* [https://global.simdsoft.com/yasio/](https://global.simdsoft.com/yasio/)
+* [https://learn.simdsoft.com/yasio/](https://learn.simdsoft.com/yasio/)
 
 ## Simple run tcptest with g++
 
@@ -58,7 +58,7 @@ g++ tests/tcp/main.cpp --std=c++11 -DYASIO_HEADER_ONLY -lpthread -I./ -o tcptest
 ## Build more examples with cmake
 
 ```sh
-git clone --recursive https://github.com/yasio/yasio
+git clone --recursive https://github.com/simdsoft/yasio
 cd yasio
 # For macOS xcode, it's shoud be: cmake -B build -GXcode
 cmake -B build
