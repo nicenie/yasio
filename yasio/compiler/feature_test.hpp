@@ -121,6 +121,13 @@ SOFTWARE.
 
 /// Tests multiplex io model of current OS
 
+// poll
+#if !defined(_WIN32) || NTDDI_VERSION >= NTDDI_VISTA
+#  define YASIO__HAS_POLL 1
+#else
+#  define YASIO__HAS_POLL 0
+#endif
+
 // ppoll
 #if defined(__linux__) && !defined(__ANDROID__) || (defined(__ANDROID_API__) && __ANDROID_API__ >= 21)
 #  define YASIO__HAS_PPOLL 1
