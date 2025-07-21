@@ -177,7 +177,7 @@ SOFTWARE.
 #  define YASIO__HAS_SA_LEN 0
 #endif
 
-#if !defined(_WIN32) || defined(NTDDI_VISTA)
+#if !defined(_WIN32) || NTDDI_VERSION >= NTDDI_VISTA
 #  define YASIO__HAS_NTOP 1
 #else
 #  define YASIO__HAS_NTOP 0
