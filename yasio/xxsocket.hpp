@@ -1066,6 +1066,8 @@ public:
   YASIO__DECL static const char* strerror_r(int error, char* buf, size_t buflen);
   YASIO__DECL static const char* gai_strerror(int error);
 
+  YASIO__DECL static void update_connect_context(socket_native_type s, std::error_code& ec);
+
   /// <summary>
   /// Resolve both ipv4 and ipv6 address as-is
   /// </summary>
